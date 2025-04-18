@@ -23,28 +23,6 @@
         ]
       ]
     },
-    "same": {
-      "main": [
-        [
-          {
-            "node": "OneAtATime",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "different": {
-      "main": [
-        [
-          {
-            "node": "GitHub Edit",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
     "new": {
       "main": [
         [
@@ -74,22 +52,6 @@
             "node": "OneAtATime",
             "type": "main",
             "index": 0
-          }
-        ]
-      ]
-    },
-    "OneAtATime": {
-      "main": [
-        [
-          {
-            "node": "GitHub",
-            "type": "main",
-            "index": 0
-          },
-          {
-            "node": "Merge",
-            "type": "main",
-            "index": 1
           }
         ]
       ]
@@ -142,14 +104,14 @@
       "main": [
         [
           {
-            "node": "same",
+            "node": "unchanged",
             "type": "main",
             "index": 0
           }
         ],
         [
           {
-            "node": "different",
+            "node": "changed",
             "type": "main",
             "index": 0
           }
@@ -170,6 +132,44 @@
             "node": "Globals",
             "type": "main",
             "index": 0
+          }
+        ]
+      ]
+    },
+    "unchanged": {
+      "main": [
+        [
+          {
+            "node": "OneAtATime",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "changed": {
+      "main": [
+        [
+          {
+            "node": "GitHub Edit",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OneAtATime": {
+      "main": [
+        [
+          {
+            "node": "GitHub",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 1
           }
         ]
       ]
@@ -244,28 +244,6 @@
         }
       },
       "continueOnFail": true
-    },
-    {
-      "parameters": {},
-      "id": "7c3df5eb-1647-4373-8c3b-82ecf1285f42",
-      "name": "same",
-      "type": "n8n-nodes-base.noOp",
-      "position": [
-        60,
-        -60
-      ],
-      "typeVersion": 1
-    },
-    {
-      "parameters": {},
-      "id": "80cecd0e-b85b-463c-b514-0cd3b125756e",
-      "name": "different",
-      "type": "n8n-nodes-base.noOp",
-      "position": [
-        60,
-        160
-      ],
-      "typeVersion": 1
     },
     {
       "parameters": {},
@@ -344,20 +322,6 @@
           "name": "GitHub (n8n-backup)"
         }
       }
-    },
-    {
-      "parameters": {
-        "batchSize": 1,
-        "options": {}
-      },
-      "id": "de171c30-f8ca-445d-b349-d30a4e388d58",
-      "name": "OneAtATime",
-      "type": "n8n-nodes-base.splitInBatches",
-      "position": [
-        -920,
-        180
-      ],
-      "typeVersion": 1
     },
     {
       "parameters": {
@@ -502,6 +466,42 @@
       ],
       "id": "0ade9bb2-f033-448e-b8cd-ca7fd49844eb",
       "name": "Sticky Note"
+    },
+    {
+      "parameters": {},
+      "id": "7c3df5eb-1647-4373-8c3b-82ecf1285f42",
+      "name": "unchanged",
+      "type": "n8n-nodes-base.noOp",
+      "position": [
+        60,
+        -60
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {},
+      "id": "80cecd0e-b85b-463c-b514-0cd3b125756e",
+      "name": "changed",
+      "type": "n8n-nodes-base.noOp",
+      "position": [
+        60,
+        160
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "batchSize": 1,
+        "options": {}
+      },
+      "id": "de171c30-f8ca-445d-b349-d30a4e388d58",
+      "name": "OneAtATime",
+      "type": "n8n-nodes-base.splitInBatches",
+      "position": [
+        -920,
+        180
+      ],
+      "typeVersion": 1
     }
   ],
   "pinData": {},
@@ -528,6 +528,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2025-04-18T08:13:04.000Z",
-  "versionId": "abdfb321-6849-4a26-9dc7-2fe9d71a0174"
+  "updatedAt": "2025-04-18T09:01:20.000Z",
+  "versionId": "01f410af-cacf-4fb3-b937-46e48e96793e"
 }
