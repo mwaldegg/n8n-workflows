@@ -101,6 +101,11 @@
             "node": "n8n",
             "type": "main",
             "index": 0
+          },
+          {
+            "node": "Get all files in given path",
+            "type": "main",
+            "index": 0
           }
         ]
       ]
@@ -179,6 +184,28 @@
         [
           {
             "node": "Globals",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get all files in given path": {
+      "main": [
+        [
+          {
+            "node": "Split the result",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Split the result": {
+      "main": [
+        [
+          {
+            "node": "Get file content from GitHub",
             "type": "main",
             "index": 0
           }
@@ -546,6 +573,76 @@
         280
       ],
       "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "url": "=https://api.github.com/repos/{{ $json.repo.owner }}/{{ $json.repo.name }}/contents/{{ $json.repo.path }}",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "githubApi",
+        "options": {}
+      },
+      "id": "d434f44a-2aef-4a8d-9f32-1dae5e58f8a5",
+      "name": "Get all files in given path",
+      "type": "n8n-nodes-base.httpRequest",
+      "position": [
+        -1000,
+        640
+      ],
+      "typeVersion": 4.2,
+      "credentials": {
+        "githubApi": {
+          "id": "Bmz9aNGmizIuLjl9",
+          "name": "GitHub (n8n-workflows)"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "fieldToSplitOut": "path",
+        "options": {}
+      },
+      "id": "f6a305ab-ee67-4a91-a928-4e6168c34d9a",
+      "name": "Split the result",
+      "type": "n8n-nodes-base.splitOut",
+      "position": [
+        -800,
+        640
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "resource": "file",
+        "operation": "get",
+        "owner": {
+          "__rl": true,
+          "value": "=https://github.com/{{ $('Globals').item.json.repo.owner }}",
+          "mode": "url"
+        },
+        "repository": {
+          "__rl": true,
+          "value": "=https://github.com/{{ $('Globals').item.json.repo.owner }}/{{ $('Globals').item.json.repo.name }}",
+          "mode": "url"
+        },
+        "filePath": "={{ $('Get all files in given path').item.json.path }}",
+        "additionalParameters": {}
+      },
+      "id": "d2262dce-404e-4d86-9df5-1683f7d40865",
+      "name": "Get file content from GitHub",
+      "type": "n8n-nodes-base.github",
+      "position": [
+        -580,
+        640
+      ],
+      "typeVersion": 1,
+      "alwaysOutputData": true,
+      "webhookId": "441bebfa-1334-4a40-a4fc-7e95c76695a1",
+      "credentials": {
+        "githubApi": {
+          "id": "Bmz9aNGmizIuLjl9",
+          "name": "GitHub (n8n-workflows)"
+        }
+      }
     }
   ],
   "pinData": {},
@@ -566,6 +663,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2025-04-18T08:27:28.000Z",
-  "versionId": "380bc782-41a7-45c2-b244-4149f21b8f38"
+  "updatedAt": "2025-04-18T08:37:03.000Z",
+  "versionId": "556afa6a-fabf-4d3f-bd3a-7050a27cee9e"
 }
