@@ -175,6 +175,11 @@
             "node": "OneAtATime",
             "type": "main",
             "index": 0
+          },
+          {
+            "node": "Workflow n8n",
+            "type": "main",
+            "index": 0
           }
         ]
       ]
@@ -206,6 +211,64 @@
         [
           {
             "node": "Get file content from GitHub",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get file content from GitHub": {
+      "main": [
+        [
+          {
+            "node": "Convert files to JSON",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Convert files to JSON": {
+      "main": [
+        [
+          {
+            "node": "Workflow github",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Workflow n8n": {
+      "main": [
+        [
+          {
+            "node": "Compare Datasets",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Workflow github": {
+      "main": [
+        [
+          {
+            "node": "Compare Datasets",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "Compare Datasets": {
+      "main": [
+        [],
+        [],
+        [],
+        [
+          {
+            "node": "GitHub Create1",
             "type": "main",
             "index": 0
           }
@@ -585,8 +648,8 @@
       "name": "Get all files in given path",
       "type": "n8n-nodes-base.httpRequest",
       "position": [
-        -1000,
-        640
+        -1160,
+        900
       ],
       "typeVersion": 4.2,
       "credentials": {
@@ -605,8 +668,8 @@
       "name": "Split the result",
       "type": "n8n-nodes-base.splitOut",
       "position": [
-        -800,
-        640
+        -960,
+        900
       ],
       "typeVersion": 1
     },
@@ -631,12 +694,142 @@
       "name": "Get file content from GitHub",
       "type": "n8n-nodes-base.github",
       "position": [
-        -580,
-        640
+        -740,
+        900
       ],
       "typeVersion": 1,
       "alwaysOutputData": true,
       "webhookId": "441bebfa-1334-4a40-a4fc-7e95c76695a1",
+      "credentials": {
+        "githubApi": {
+          "id": "Bmz9aNGmizIuLjl9",
+          "name": "GitHub (n8n-workflows)"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "fromJson",
+        "options": {}
+      },
+      "id": "bc3712ec-23b3-4cc9-8105-f5954cab27b3",
+      "name": "Convert files to JSON",
+      "type": "n8n-nodes-base.extractFromFile",
+      "position": [
+        -560,
+        900
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "mergeByFields": {
+          "values": [
+            {
+              "field1": "data.name",
+              "field2": "data.name"
+            },
+            {
+              "field1": "data.id",
+              "field2": "data.id"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.compareDatasets",
+      "typeVersion": 2.3,
+      "position": [
+        -100,
+        820
+      ],
+      "id": "cf87bda3-6fa9-4615-bebf-1e5d0a1220e5",
+      "name": "Compare Datasets"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "52244367-db89-43c8-9c97-a6903799d56f",
+              "name": "data.name",
+              "value": "={{ $json.name }}",
+              "type": "string"
+            },
+            {
+              "id": "3304636d-8829-4aef-a5c0-1777218618bf",
+              "name": "data.id",
+              "value": "={{ $json.id }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -340,
+        740
+      ],
+      "id": "4ed25ff7-8fc5-47f1-8b71-4c4cd2efddca",
+      "name": "Workflow n8n"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "52244367-db89-43c8-9c97-a6903799d56f",
+              "name": "data.name",
+              "value": "={{ $json.data.name }}",
+              "type": "string"
+            },
+            {
+              "id": "fef12b77-2206-4661-87a0-900f6b642b5a",
+              "name": "data.id",
+              "value": "={{ $json.data.id }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -340,
+        900
+      ],
+      "id": "9d0a33f1-0b8f-4999-a77e-c00765464f27",
+      "name": "Workflow github"
+    },
+    {
+      "parameters": {
+        "resource": "file",
+        "operation": "delete",
+        "owner": {
+          "__rl": true,
+          "value": "=https://github.com/{{ $('Globals').item.json.repo.owner }}",
+          "mode": "url"
+        },
+        "repository": {
+          "__rl": true,
+          "value": "=https://github.com/{{ $('Globals').item.json.repo.owner }}/{{ $('Globals').item.json.repo.name }}",
+          "mode": "url"
+        },
+        "filePath": "={{$node[\"Globals\"].json[\"repo\"][\"path\"]}}{{ $json.data.name }}.json",
+        "commitMessage": "=removed Workflow: {{ $json.data.name }} ({{ $json.data.id }})"
+      },
+      "id": "e398ea2f-9fb6-4ad7-bcdf-5fec996e5e17",
+      "name": "GitHub Create1",
+      "type": "n8n-nodes-base.github",
+      "position": [
+        240,
+        880
+      ],
+      "typeVersion": 1,
+      "webhookId": "625ff10b-1643-4701-9290-f503a9a9e0b2",
       "credentials": {
         "githubApi": {
           "id": "Bmz9aNGmizIuLjl9",
@@ -663,6 +856,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2025-04-18T08:37:03.000Z",
-  "versionId": "556afa6a-fabf-4d3f-bd3a-7050a27cee9e"
+  "updatedAt": "2025-04-18T08:49:47.000Z",
+  "versionId": "79e343e3-b63f-41fe-9a39-c4b7a490ca2a"
 }
