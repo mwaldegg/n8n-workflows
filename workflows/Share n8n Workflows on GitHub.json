@@ -559,7 +559,7 @@
     },
     {
       "parameters": {
-        "content": "### Setup\nOpen `Globals` node and update the values below 👇\n\n- **repo.owner:** your Github username\n- **repo.name:** the name of your repository\n- **repo.path:** the folder to use within the repository.\n\n\nIf your username was `john-connor` and your repository was called `n8n-backups` and you wanted the credentials to go into a `n8n.example.net/credentials` folder you would set:\n\n- repo.owner - john-connor\n- repo.name - n8n-backup\n- repo.path - workflows/",
+        "content": "### Setup\nOpen `Globals` node and update the values below 👇\n\n- **repo.owner:** your Github username\n- **repo.name:** the name of your repository\n- **repo.path:** the folder to use within the repository.\n\n\nIf your username was `john-connor` and your repository was called `n8n-workflows` and you wanted the workflows to go into a `workflows` folder you would set:\n\n- repo.owner - john-connor\n- repo.name - n8n-workflows\n- repo.path - workflows/",
         "height": 420,
         "width": 380
       },
@@ -605,7 +605,7 @@
       "id": "1524e1a4-f840-4b4e-ac6c-b78a4c719529",
       "name": "Filter",
       "notesInFlow": true,
-      "notes": "Filter WOrkflows with tag \"public\""
+      "notes": "Workflows with tag \"share\""
     },
     {
       "parameters": {
@@ -894,6 +894,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2025-04-18T08:55:24.000Z",
-  "versionId": "ba7324fc-5233-4b33-bc59-3eef3bfd8dc8"
+  "updatedAt": "2025-04-18T08:57:49.000Z",
+  "versionId": "31a7d1cd-b55c-4dde-867a-85d7653e42b4"
 }
