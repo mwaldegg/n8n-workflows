@@ -296,7 +296,7 @@
   "nodes": [
     {
       "parameters": {
-        "content": "## Sync n8n Workflows to GitHub \nThis workflow will export all instance workflows with tag \"share\" to GitHub on given Schedule.\n\nWorkflows get deleted, when Tag is removed\n\nThe files are saved as `NAME.json` in configured sub directory\n\n\nMWa 2025",
+        "content": "## Sync n8n Workflows to GitHub \nThis workflow will export all instance workflows with tag \"share\" to GitHub on given Schedule.\n\nWorkflows get deleted, when Tag or Workflow is removed\n\nThe files are saved as `NAME.json` in configured sub directory\n\n\nMWa 2025",
         "height": 417,
         "width": 385,
         "color": 4
@@ -894,6 +894,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2025-04-18T08:57:49.000Z",
-  "versionId": "31a7d1cd-b55c-4dde-867a-85d7653e42b4"
+  "updatedAt": "2025-04-18T08:59:03.000Z",
+  "versionId": "39a6a17d-ba6f-4418-8e9f-5f57c6ef8fac"
 }
