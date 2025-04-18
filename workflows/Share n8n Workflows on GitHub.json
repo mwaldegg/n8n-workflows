@@ -268,7 +268,7 @@
         [],
         [
           {
-            "node": "GitHub Create1",
+            "node": "GitHub delete",
             "type": "main",
             "index": 0
           }
@@ -648,8 +648,8 @@
       "name": "Get all files in given path",
       "type": "n8n-nodes-base.httpRequest",
       "position": [
-        -1160,
-        900
+        -980,
+        860
       ],
       "typeVersion": 4.2,
       "credentials": {
@@ -668,8 +668,8 @@
       "name": "Split the result",
       "type": "n8n-nodes-base.splitOut",
       "position": [
-        -960,
-        900
+        -780,
+        860
       ],
       "typeVersion": 1
     },
@@ -694,8 +694,8 @@
       "name": "Get file content from GitHub",
       "type": "n8n-nodes-base.github",
       "position": [
-        -740,
-        900
+        -560,
+        860
       ],
       "typeVersion": 1,
       "alwaysOutputData": true,
@@ -716,8 +716,8 @@
       "name": "Convert files to JSON",
       "type": "n8n-nodes-base.extractFromFile",
       "position": [
-        -560,
-        900
+        -380,
+        860
       ],
       "typeVersion": 1
     },
@@ -740,8 +740,8 @@
       "type": "n8n-nodes-base.compareDatasets",
       "typeVersion": 2.3,
       "position": [
-        -100,
-        820
+        80,
+        780
       ],
       "id": "cf87bda3-6fa9-4615-bebf-1e5d0a1220e5",
       "name": "Compare Datasets"
@@ -769,8 +769,8 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        -340,
-        740
+        -160,
+        700
       ],
       "id": "4ed25ff7-8fc5-47f1-8b71-4c4cd2efddca",
       "name": "Workflow n8n"
@@ -798,8 +798,8 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        -340,
-        900
+        -160,
+        860
       ],
       "id": "9d0a33f1-0b8f-4999-a77e-c00765464f27",
       "name": "Workflow github"
@@ -822,11 +822,11 @@
         "commitMessage": "=removed Workflow: {{ $json.data.name }} ({{ $json.data.id }})"
       },
       "id": "e398ea2f-9fb6-4ad7-bcdf-5fec996e5e17",
-      "name": "GitHub Create1",
+      "name": "GitHub delete",
       "type": "n8n-nodes-base.github",
       "position": [
-        240,
-        880
+        420,
+        840
       ],
       "typeVersion": 1,
       "webhookId": "625ff10b-1643-4701-9290-f503a9a9e0b2",
@@ -836,6 +836,22 @@
           "name": "GitHub (n8n-workflows)"
         }
       }
+    },
+    {
+      "parameters": {
+        "content": "## Delete worflows\n**Delete WOrkflows that should not be shared anymore",
+        "height": 420,
+        "width": 1720,
+        "color": 6
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -1040,
+        640
+      ],
+      "id": "eedcf63c-8cdf-4093-ba14-e3a59b7784e3",
+      "name": "Sticky Note2"
     }
   ],
   "pinData": {},
@@ -856,6 +872,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2025-04-18T08:49:47.000Z",
-  "versionId": "79e343e3-b63f-41fe-9a39-c4b7a490ca2a"
+  "updatedAt": "2025-04-18T08:51:46.000Z",
+  "versionId": "f8fbebc3-ccbb-47c3-a4f1-e5d9c8602b76"
 }
