@@ -23,28 +23,6 @@
         ]
       ]
     },
-    "same": {
-      "main": [
-        [
-          {
-            "node": "OneAtATime",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "different": {
-      "main": [
-        [
-          {
-            "node": "GitHub Edit",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
     "new": {
       "main": [
         [
@@ -147,14 +125,14 @@
       "main": [
         [
           {
-            "node": "same",
+            "node": "unchanged",
             "type": "main",
             "index": 0
           }
         ],
         [
           {
-            "node": "different",
+            "node": "changed",
             "type": "main",
             "index": 0
           }
@@ -268,6 +246,39 @@
         [],
         [
           {
+            "node": "removed",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "unchanged": {
+      "main": [
+        [
+          {
+            "node": "OneAtATime",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "changed": {
+      "main": [
+        [
+          {
+            "node": "GitHub Edit",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "removed": {
+      "main": [
+        [
+          {
             "node": "GitHub delete",
             "type": "main",
             "index": 0
@@ -285,7 +296,7 @@
   "nodes": [
     {
       "parameters": {
-        "content": "## Sync n8n Workflows to GitHub \nThis workflow will export all instance workflows with tag \"share\" to GitHub on given Schedule\n\nThe files are saved as `NAME.json` in configured sub directory",
+        "content": "## Sync n8n Workflows to GitHub \nThis workflow will export all instance workflows with tag \"share\" to GitHub on given Schedule.\n\nWorkflows get deleted, when Tag is removed\n\nThe files are saved as `NAME.json` in configured sub directory\n\n\nMWa 2025",
         "height": 417,
         "width": 385,
         "color": 4
@@ -345,28 +356,6 @@
         }
       },
       "continueOnFail": true
-    },
-    {
-      "parameters": {},
-      "id": "3b81efe5-16bd-4284-9623-2ee4664528bd",
-      "name": "same",
-      "type": "n8n-nodes-base.noOp",
-      "position": [
-        360,
-        -60
-      ],
-      "typeVersion": 1
-    },
-    {
-      "parameters": {},
-      "id": "2dedebc2-efe0-4f71-a685-b589cc03f44c",
-      "name": "different",
-      "type": "n8n-nodes-base.noOp",
-      "position": [
-        360,
-        160
-      ],
-      "typeVersion": 1
     },
     {
       "parameters": {},
@@ -825,7 +814,7 @@
       "name": "GitHub delete",
       "type": "n8n-nodes-base.github",
       "position": [
-        420,
+        500,
         840
       ],
       "typeVersion": 1,
@@ -839,7 +828,7 @@
     },
     {
       "parameters": {
-        "content": "## Delete worflows\n**Delete WOrkflows that should not be shared anymore",
+        "content": "## Delete worflows\n**Delete Workflows that should not be shared anymore",
         "height": 420,
         "width": 1720,
         "color": 6
@@ -848,10 +837,43 @@
       "typeVersion": 1,
       "position": [
         -1040,
-        640
+        680
       ],
       "id": "eedcf63c-8cdf-4093-ba14-e3a59b7784e3",
       "name": "Sticky Note2"
+    },
+    {
+      "parameters": {},
+      "id": "41bb845a-7d2f-4df1-854a-d86f73ba5cfe",
+      "name": "removed",
+      "type": "n8n-nodes-base.noOp",
+      "position": [
+        320,
+        840
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {},
+      "id": "3b81efe5-16bd-4284-9623-2ee4664528bd",
+      "name": "unchanged",
+      "type": "n8n-nodes-base.noOp",
+      "position": [
+        360,
+        -60
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {},
+      "id": "2dedebc2-efe0-4f71-a685-b589cc03f44c",
+      "name": "changed",
+      "type": "n8n-nodes-base.noOp",
+      "position": [
+        360,
+        160
+      ],
+      "typeVersion": 1
     }
   ],
   "pinData": {},
@@ -872,6 +894,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2025-04-18T08:51:46.000Z",
-  "versionId": "f8fbebc3-ccbb-47c3-a4f1-e5d9c8602b76"
+  "updatedAt": "2025-04-18T08:55:24.000Z",
+  "versionId": "ba7324fc-5233-4b33-bc59-3eef3bfd8dc8"
 }
