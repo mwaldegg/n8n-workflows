@@ -163,22 +163,22 @@
         ]
       ]
     },
-    "backup every 10 minutes": {
+    "Filter": {
       "main": [
         [
           {
-            "node": "Globals",
+            "node": "OneAtATime",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Filter": {
+    "Run daily": {
       "main": [
         [
           {
-            "node": "OneAtATime",
+            "node": "Globals",
             "type": "main",
             "index": 0
           }
@@ -195,7 +195,7 @@
   "nodes": [
     {
       "parameters": {
-        "content": "## Sync n8n Workflows to GitHub \nThis workflow will export all instance workflows with tag \"public\" to GitHub on given Schedule\n\nThe files are saved as `NAME.json` in configured sub directory",
+        "content": "## Sync n8n Workflows to GitHub \nThis workflow will export all instance workflows with tag \"share\" to GitHub on given Schedule\n\nThe files are saved as `NAME.json` in configured sub directory",
         "height": 417,
         "width": 385,
         "color": 4
@@ -480,27 +480,6 @@
     },
     {
       "parameters": {
-        "triggerTimes": {
-          "item": [
-            {
-              "mode": "everyX",
-              "value": 10,
-              "unit": "minutes"
-            }
-          ]
-        }
-      },
-      "id": "002552af-169d-4d89-8ef4-824ac9bf721a",
-      "name": "backup every 10 minutes",
-      "type": "n8n-nodes-base.cron",
-      "position": [
-        -1520,
-        280
-      ],
-      "typeVersion": 1
-    },
-    {
-      "parameters": {
         "content": "### Setup\nOpen `Globals` node and update the values below 👇\n\n- **repo.owner:** your Github username\n- **repo.name:** the name of your repository\n- **repo.path:** the folder to use within the repository.\n\n\nIf your username was `john-connor` and your repository was called `n8n-backups` and you wanted the credentials to go into a `n8n.example.net/credentials` folder you would set:\n\n- repo.owner - john-connor\n- repo.name - n8n-backup\n- repo.path - workflows/",
         "height": 420,
         "width": 380
@@ -527,7 +506,7 @@
             {
               "id": "c3891f97-a50e-416f-a353-bc4b80e8f136",
               "leftValue": "={{ $json.tags.toJsonString() }}",
-              "rightValue": "public",
+              "rightValue": "\"name\":\"share\"",
               "operator": {
                 "type": "string",
                 "operation": "contains"
@@ -541,13 +520,32 @@
       "type": "n8n-nodes-base.filter",
       "typeVersion": 2.2,
       "position": [
-        -880,
+        -920,
         180
       ],
       "id": "1524e1a4-f840-4b4e-ac6c-b78a4c719529",
       "name": "Filter",
       "notesInFlow": true,
       "notes": "Filter WOrkflows with tag \"public\""
+    },
+    {
+      "parameters": {
+        "triggerTimes": {
+          "item": [
+            {
+              "hour": 6
+            }
+          ]
+        }
+      },
+      "id": "002552af-169d-4d89-8ef4-824ac9bf721a",
+      "name": "Run daily",
+      "type": "n8n-nodes-base.cron",
+      "position": [
+        -1520,
+        280
+      ],
+      "typeVersion": 1
     }
   ],
   "pinData": {},
@@ -568,6 +566,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2025-04-18T08:12:44.000Z",
-  "versionId": "93cf8aa1-9c3d-42c8-bc4a-ab1474e1449c"
+  "updatedAt": "2025-04-18T08:14:54.000Z",
+  "versionId": "d8c134a3-3b63-4e13-9e49-8fc28a4e8c30"
 }
