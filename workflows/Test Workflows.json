@@ -1,0 +1,37 @@
+{
+  "active": false,
+  "connections": {},
+  "createdAt": "2025-04-18T08:24:31.944Z",
+  "id": "srzUtEMyHn4VtSOh",
+  "meta": null,
+  "name": "Test Workflows",
+  "nodes": [
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        0,
+        0
+      ],
+      "id": "7e71478e-0931-4454-8109-a04c0ebb7690",
+      "name": "When clicking ‘Test workflow’"
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [
+    {
+      "createdAt": "2025-04-18T08:12:43.340Z",
+      "updatedAt": "2025-04-18T08:12:43.340Z",
+      "id": "JEbqNIF4CIyavejD",
+      "name": "share"
+    }
+  ],
+  "triggerCount": 0,
+  "updatedAt": "2025-04-18T08:58:19.000Z",
+  "versionId": "1dd26e9b-44e3-4b49-9d3f-0aa90a17c92b"
+}
