@@ -637,8 +637,8 @@
       "name": "Get all files in given path",
       "type": "n8n-nodes-base.httpRequest",
       "position": [
-        -980,
-        860
+        -940,
+        760
       ],
       "typeVersion": 4.2,
       "credentials": {
@@ -657,8 +657,8 @@
       "name": "Split the result",
       "type": "n8n-nodes-base.splitOut",
       "position": [
-        -780,
-        860
+        -740,
+        760
       ],
       "typeVersion": 1
     },
@@ -683,8 +683,8 @@
       "name": "Get file content from GitHub",
       "type": "n8n-nodes-base.github",
       "position": [
-        -560,
-        860
+        -520,
+        760
       ],
       "typeVersion": 1,
       "alwaysOutputData": true,
@@ -705,8 +705,8 @@
       "name": "Convert files to JSON",
       "type": "n8n-nodes-base.extractFromFile",
       "position": [
-        -380,
-        860
+        -340,
+        760
       ],
       "typeVersion": 1
     },
@@ -729,8 +729,8 @@
       "type": "n8n-nodes-base.compareDatasets",
       "typeVersion": 2.3,
       "position": [
-        80,
-        780
+        120,
+        680
       ],
       "id": "cf87bda3-6fa9-4615-bebf-1e5d0a1220e5",
       "name": "Compare Datasets"
@@ -758,8 +758,8 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        -160,
-        700
+        -120,
+        600
       ],
       "id": "4ed25ff7-8fc5-47f1-8b71-4c4cd2efddca",
       "name": "Workflow n8n"
@@ -787,8 +787,8 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        -160,
-        860
+        -120,
+        760
       ],
       "id": "9d0a33f1-0b8f-4999-a77e-c00765464f27",
       "name": "Workflow github"
@@ -814,8 +814,8 @@
       "name": "GitHub delete",
       "type": "n8n-nodes-base.github",
       "position": [
-        500,
-        840
+        540,
+        740
       ],
       "typeVersion": 1,
       "webhookId": "625ff10b-1643-4701-9290-f503a9a9e0b2",
@@ -836,8 +836,8 @@
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        -1040,
-        680
+        -1000,
+        580
       ],
       "id": "eedcf63c-8cdf-4093-ba14-e3a59b7784e3",
       "name": "Sticky Note2"
@@ -848,8 +848,8 @@
       "name": "removed",
       "type": "n8n-nodes-base.noOp",
       "position": [
-        320,
-        840
+        360,
+        740
       ],
       "typeVersion": 1
     },
@@ -894,6 +894,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2025-04-18T08:59:03.000Z",
-  "versionId": "39a6a17d-ba6f-4418-8e9f-5f57c6ef8fac"
+  "updatedAt": "2025-04-22T22:53:16.000Z",
+  "versionId": "08c7d31e-c6c3-4d85-8361-d6bac109fc2d"
 }
