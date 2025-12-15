@@ -1813,7 +1813,11 @@
   ],
   "pinData": {},
   "settings": {
-    "executionOrder": "v1"
+    "executionOrder": "v1",
+    "timeSavedMode": "fixed",
+    "callerPolicy": "workflowsFromSameOwner",
+    "availableInMCP": false,
+    "timeSavedPerExecution": 10
   },
   "shared": [
     {
@@ -1838,6 +1842,6 @@
     }
   ],
   "triggerCount": 2,
-  "updatedAt": "2025-12-15T20:29:05.959Z",
+  "updatedAt": "2025-12-15T20:36:43.347Z",
   "versionId": "aef7f5a2-4b4a-4c53-bdf3-ba7230293651"
 }
