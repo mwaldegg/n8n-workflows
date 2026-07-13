@@ -902,6 +902,7 @@
         ]
       }
     },
+    "nodeGroups": [],
     "authors": "Markus Waldegger",
     "name": "Version aef7f5a2",
     "description": "",
@@ -1213,6 +1214,7 @@
     "templateCredsSetupCompleted": true
   },
   "name": "Share n8n Workflows on GitHub",
+  "nodeGroups": [],
   "nodes": [
     {
       "parameters": {
