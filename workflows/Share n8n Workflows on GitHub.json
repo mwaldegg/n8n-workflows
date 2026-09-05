@@ -1,8 +1,6 @@
 {
   "active": true,
   "activeVersion": {
-    "updatedAt": "2025-12-15T20:35:36.000Z",
-    "createdAt": "2025-12-15T20:29:05.961Z",
     "versionId": "aef7f5a2-4b4a-4c53-bdf3-ba7230293651",
     "workflowId": "SWX9etG3JQiRmI2M",
     "nodes": [
@@ -906,7 +904,9 @@
     "authors": "Markus Waldegger",
     "name": "Version aef7f5a2",
     "description": "",
-    "autosaved": false
+    "autosaved": false,
+    "createdAt": "2025-12-15T20:29:05.961Z",
+    "updatedAt": "2025-12-15T20:35:36.000Z"
   },
   "activeVersionId": "aef7f5a2-4b4a-4c53-bdf3-ba7230293651",
   "connections": {
@@ -1824,11 +1824,11 @@
   },
   "shared": [
     {
-      "updatedAt": "2025-04-18T07:32:57.155Z",
-      "createdAt": "2025-04-18T07:32:57.155Z",
       "role": "workflow:owner",
       "workflowId": "SWX9etG3JQiRmI2M",
-      "projectId": "jhc6pxhK86MZMq5p"
+      "projectId": "jhc6pxhK86MZMq5p",
+      "createdAt": "2025-04-18T07:32:57.155Z",
+      "updatedAt": "2025-04-18T07:32:57.155Z"
     }
   ],
   "staticData": {
@@ -1838,10 +1838,10 @@
   },
   "tags": [
     {
-      "updatedAt": "2025-04-18T08:12:43.340Z",
-      "createdAt": "2025-04-18T08:12:43.340Z",
       "id": "JEbqNIF4CIyavejD",
-      "name": "share"
+      "name": "share",
+      "createdAt": "2025-04-18T08:12:43.340Z",
+      "updatedAt": "2025-04-18T08:12:43.340Z"
     }
   ],
   "triggerCount": 2,
