@@ -277,6 +277,7 @@
                 "combinator": "and",
                 "conditions": [
                   {
+                    "id": "8ac6fcce-5788-4bac-ba2d-9f14524a9ede",
                     "leftValue": "={{ $json.action }}",
                     "operator": {
                       "operation": "equals",
@@ -289,7 +290,7 @@
                   "caseSensitive": true,
                   "leftValue": "",
                   "typeValidation": "strict",
-                  "version": 1
+                  "version": 3
                 }
               },
               "outputKey": "create",
@@ -300,6 +301,7 @@
                 "combinator": "and",
                 "conditions": [
                   {
+                    "id": "da99e918-8bda-4191-bac5-22b0b36f5f49",
                     "leftValue": "={{ $json.action }}",
                     "operator": {
                       "operation": "equals",
@@ -312,7 +314,7 @@
                   "caseSensitive": true,
                   "leftValue": "",
                   "typeValidation": "strict",
-                  "version": 1
+                  "version": 3
                 }
               },
               "outputKey": "check",
@@ -323,6 +325,7 @@
                 "combinator": "and",
                 "conditions": [
                   {
+                    "id": "ea6de31a-ff95-4cb8-be0c-624f343ff328",
                     "leftValue": "={{ $json.action }}",
                     "operator": {
                       "operation": "equals",
@@ -335,7 +338,7 @@
                   "caseSensitive": true,
                   "leftValue": "",
                   "typeValidation": "strict",
-                  "version": 1
+                  "version": 3
                 }
               },
               "outputKey": "delete",
